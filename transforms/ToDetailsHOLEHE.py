@@ -49,12 +49,12 @@ class ToDetailsHOLEHE(DiscoverableTransform):
                     web.addOverlay("#31bd2a", OverlayPosition.NORTH_WEST, OverlayType.COLOUR)
 
                     if website["emailrecovery"] is not None:
-                        email = response.addEntity("maltego.EmailAddress", website["emailrecovery"])
-                        email.setLinkLabel("Found in " + website["domain"])
+                        recovery_email = response.addEntity("maltego.EmailAddress", website["emailrecovery"])
+                        recovery_email.setLinkLabel("Found in " + website["domain"])
 
                     if website["phoneNumber"] is not None:
-                        email = response.addEntity("maltego.PhoneNumber", website["phoneNumber"])
-                        email.setLinkLabel("Found in " + website["domain"])
+                        phone = response.addEntity("maltego.PhoneNumber", website["phoneNumber"])
+                        phone.setLinkLabel("Found in " + website["domain"])
 
                     if website["others"] is not None:
                         response.addEntity("maltego.Phrase", "Found from " + website["name"] + str(website["others"]))
